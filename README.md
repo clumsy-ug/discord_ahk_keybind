@@ -5,6 +5,7 @@
   - Windows 11 Homeで挙動確認済み
 - IMEはMicrosoft IME
   - Windows購入時にデフォルトになってるやつ（多分）
+- Discordデスクトップアプリ
 
 # 内容
 - EnterではなくCtrl + Enterで送信されるようにした
