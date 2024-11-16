@@ -18,7 +18,7 @@
 - 半角英数字モードでEnterを押した場合
   - 改行される（元々のShift + Enterを割り当てた）
 
-# カバーしていないこと
+# 注意
 - Windowsでしか動かない
   - 挙動確認済みなのはWindows 11 Homeのみ
   - MacならKarabiner-Elementsを使えば良さそう
