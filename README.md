@@ -4,7 +4,7 @@
 - Windows
   - Windows 11 Homeで挙動確認済み
 - IMEはMicrosoft IME
-  - 多分Windows購入時にデフォルトになってる
+  - Windows購入時にデフォルトになってるやつ（多分）
 
 # 内容
 - EnterではなくCtrl + Enterで送信されるようにした
