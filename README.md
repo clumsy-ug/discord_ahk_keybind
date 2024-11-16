@@ -1,4 +1,4 @@
-# DiscordがEnterで送信されてしまうのを防ぐ
+# 【Discord】Enterで送信されてしまうのを防ぐ
 
 # 動く環境
 - Windows
