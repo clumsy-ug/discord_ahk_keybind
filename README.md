@@ -21,5 +21,5 @@
 - Windowsでしか動かない
   - 挙動確認済みなのはWindows 11 Homeのみ
   - MacならKarabiner-Elementsを使えば良さそう
-- Microsoft IME（最新？バージョン）のコードしか書いていない
+- Microsoft IME（多分最新）でしか動かない
 - Discordでしか動かない
