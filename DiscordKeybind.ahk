@@ -84,7 +84,28 @@ global count := 0
     ; 確認用
     ; ToolTip("countは: " . count)  ; カウントをツールチップで表示
     ; SetTimer () => ToolTip(), -2000  ; 2秒後にツールチップを消す
+
+    return
 }
+
+; 半角/全角 が押された場合（「英語->日本語」ならcountを0にする）
+~sc029::
+{
+    global count
+    ; 押された瞬間のモードが取得できるので、「英語->日本語」の変更では「英語」が取得される
+    imeMode := IME_GET()
+
+    if (!imeMode) {
+        count := 0
+    }
+
+    ; 確認用
+    ; ToolTip("countは" . count . " / " . "imeModeは" . imeMode)
+    ; SetTimer () => ToolTip(), -2000
+
+    return
+}
+
 
 ; Enter が押された場合
 Enter::
@@ -110,6 +131,8 @@ Enter::
 
     return
 }
+
+
 
 ; Ctrl + Enter が押された場合
 ^Enter::
