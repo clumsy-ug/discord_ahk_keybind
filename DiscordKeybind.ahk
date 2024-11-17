@@ -88,6 +88,16 @@ global count := 0
     return
 }
 
+; マウスクリックが押された場合
+; クリックの後すぐにEnterを押すと送信されてしまうのを防ぐ
+~LButton::
+~RButton::
+{
+    global count
+    count := 0
+    return
+}
+
 ; 半角/全角 が押された場合（「英語->ひらがな」ならcountを0にする）
 ~sc029::
 {
@@ -106,6 +116,15 @@ global count := 0
     return
 }
 
+; Ctrl + V が押された場合
+; コピペしてからすぐEnterを押したら送信されてしまうのを防ぐ
+^v::
+{
+    global count
+    count := 0
+    SendInput "^v"
+    return
+}
 
 ; Enter が押された場合
 Enter::
