@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 
-; 今回はDiscord専用にしたいので、Discordのウィンドウクラスを指定
+; Discordのウィンドウクラスを指定
 #HotIf WinActive("ahk_exe Discord.exe")
 
 ; https://github.com/k-ayaki/IMEv2.ahk/blob/master/IMEv2.ahk   <- コピペ元
@@ -27,7 +27,7 @@ IME_GET(WinTitle:="A")  {
 ; ここまでコピペ
 ; *****************************************************************************
 
-; キーが押された回数
+; 入力中の文字数を保持
 global count := 0
 
 ; ほぼ全てのキーが押された際の処理(半角/全角キー などは不要なので除く)
@@ -116,10 +116,6 @@ global count := 0
         count := 0
     }
 
-    ; 確認用
-    ; ToolTip("countは" . count . " / " . "imeModeは" . imeMode)
-    ; SetTimer () => ToolTip(), -2000
-
     return
 }
 
@@ -138,10 +134,6 @@ global count := 0
 ; Enter が押された場合
 Enter::
 {
-    ; 確認用
-    ; ToolTip("countは: " . count)
-    ; SetTimer () => ToolTip(), -2000
-
     global count
     imeMode := IME_GET()
 
