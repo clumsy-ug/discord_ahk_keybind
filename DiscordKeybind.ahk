@@ -98,6 +98,7 @@ global count := 0
 ; クリックの後すぐにEnterを押すと送信されてしまうのを防ぐ
 ~LButton::
 ~RButton::
+~sc03A::  ; CapsLockキー単体
 {
     global count
     count := 0
