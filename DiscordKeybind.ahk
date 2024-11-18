@@ -87,8 +87,8 @@ global count := 0
     
     ; 確認用
     ; ToolTip("countは: " . count)  ; カウントをツールチップで表示
-    ToolTip("Key: " . A_ThisHotkey . "`nVK: " . Format("0x{:X}", GetKeyVK(A_ThisHotkey)) . "`nSC: " . Format("0x{:X}", GetKeySC(A_ThisHotkey)))
-    SetTimer () => ToolTip(), -2000  ; 2秒後にツールチップを消す
+    ; ToolTip("Key: " . A_ThisHotkey . "`nVK: " . Format("0x{:X}", GetKeyVK(A_ThisHotkey)) . "`nSC: " . Format("0x{:X}", GetKeySC(A_ThisHotkey)))
+    ; SetTimer () => ToolTip(), -2000  ; 2秒後にツールチップを消す
 
     return
 }
