@@ -155,6 +155,8 @@ Enter::
 ; Ctrl + Enter が押された場合
 ^Enter::
 {
+    global count
+    count := 0
     SendInput "{Enter}"
     return
 }
