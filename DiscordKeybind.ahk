@@ -76,16 +76,23 @@ global count := 0
 ~*]::
 ~*-::
 ~*=::
+~*^::
+~*\::  ; 右上の￥
+~*sc073::  ; 右下の￥
+~*vkBA::  ; コロンとアスタリスク
+~*sc01A::  ; アットマーク(JISキーボード)
 {
     global count
     count++
     
     ; 確認用
     ; ToolTip("countは: " . count)  ; カウントをツールチップで表示
-    ; SetTimer () => ToolTip(), -2000  ; 2秒後にツールチップを消す
+    ToolTip("Key: " . A_ThisHotkey . "`nVK: " . Format("0x{:X}", GetKeyVK(A_ThisHotkey)) . "`nSC: " . Format("0x{:X}", GetKeySC(A_ThisHotkey)))
+    SetTimer () => ToolTip(), -2000  ; 2秒後にツールチップを消す
 
     return
 }
+
 
 ; マウスクリックが押された場合
 ; クリックの後すぐにEnterを押すと送信されてしまうのを防ぐ
@@ -96,6 +103,7 @@ global count := 0
     count := 0
     return
 }
+
 
 ; 半角/全角 が押された場合（「英語->ひらがな」ならcountを0にする）
 ~sc029::
@@ -115,6 +123,7 @@ global count := 0
     return
 }
 
+
 ; Ctrl + V が押された場合
 ; コピペしてからすぐEnterを押したら送信されてしまうのを防ぐ
 ^v::
@@ -124,6 +133,7 @@ global count := 0
     SendInput "^v"
     return
 }
+
 
 ; Enter が押された場合
 Enter::
@@ -149,7 +159,6 @@ Enter::
 
     return
 }
-
 
 
 ; Ctrl + Enter が押された場合
