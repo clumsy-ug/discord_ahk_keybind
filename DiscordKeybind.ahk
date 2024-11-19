@@ -121,11 +121,15 @@ global count := 0
 
 
 ; Ctrl + V が押された場合
-; コピペしてからすぐEnterを押したら送信されてしまうのを防ぐ
+; Ctrl + VしてからすぐEnterを押したら送信されてしまうのを防ぐ
 ^v::
 {
     global count
-    count := 0
+    imeMode := IME_GET()
+    ; ひらがなモードで入力中にCtrl + V->Enter が効かない問題を解決
+    if (!imeMode && count == 0) {
+        count := 0
+    }
     SendInput "^v"
     return
 }
