@@ -143,6 +143,18 @@ global count := 0
 }
 
 
+; Backspaceが押された場合
+; 入力中の文字をすべて消してEnterを押すと送信されてしまうのを防ぐ
+~BackSpace::
+{
+    global count
+    if (count > 0) {
+        count--
+    }
+    return
+}
+
+
 ; Enter が押された場合
 Enter::
 {
