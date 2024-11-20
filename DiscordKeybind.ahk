@@ -119,14 +119,22 @@ global count := 0
     return
 }
 
+; Ctrl + c が押された場合
+; ひらがなモードかつ入力中でない時にctrl + c押してEnterを押すと送信されてしまうのを防ぐ
+; この中の処理が優先されるのでctrl + cの「c」の本来の1回分のcountプラス処理は行われなくなる
+^c::
+{
+    SendInput "^c"
+    return
+}
 
-; Ctrl + V が押された場合
-; Ctrl + VしてからすぐEnterを押したら送信されてしまうのを防ぐ
+; Ctrl + v が押された場合
+; Ctrl + vしてからすぐEnterを押したら送信されてしまうのを防ぐ
 ^v::
 {
     global count
     imeMode := IME_GET()
-    ; ひらがなモードで入力中にCtrl + V->Enter が効かない問題を解決
+    ; ひらがなモードで入力中にCtrl + v->Enter が効かない問題を解決
     if (!imeMode && count == 0) {
         count := 0
     }
