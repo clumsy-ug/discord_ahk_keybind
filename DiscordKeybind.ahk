@@ -157,6 +157,7 @@ global count := 0
 
 ; Enter が押された場合
 Enter::
+NumpadEnter::  ; テンキーパッドのEnter
 {
     global count
     imeMode := IME_GET()
