@@ -80,6 +80,9 @@ global count := 0
 ~*sc073::  ; 右下の￥
 ~*vkBA::  ; コロンとアスタリスク
 ~*sc01A::  ; アットマーク(JISキーボード)
+~*NumpadDiv::  ; テンキーパッドの /
+~*NumpadMult::  ; テンキーパッドの *
+~*NumpadAdd::  ; テンキーパッドの +
 {
     global count
     count++
