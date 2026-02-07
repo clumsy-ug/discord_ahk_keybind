@@ -1,4 +1,5 @@
-# 【Discord】Enterで送信されてしまうのを防ぐAutoHotkey
+# Discordの送信を、EnterではなくCtrl + Enterにする非公式ツール(Windows)
 
-Zennで詳細を書いています。こちらをご覧ください。<br>
+詳細
+
 https://zenn.dev/yg_kita/articles/60fd71fac312e2
